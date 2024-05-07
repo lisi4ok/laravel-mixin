@@ -1,12 +1,6 @@
-/vendor/
-node_modules/
-npm-debug.log
-yarn-error.log
-
-
 # Laravel 4 specific
 bootstrap/compiled.php
-app/storage/
+app/storage
 
 # Laravel 5 & Lumen specific
 public/storage
@@ -18,10 +12,17 @@ public_html/storage
 public_html/hot
 public_html/build
 
+/storage/*.key
+
+/vendor
+/node_modules
+/bootstrap/ssr
+npm-debug.log
+yarn-error.log
+
 .env
 .env.backup
 .env.production
-
 
 Homestead.json
 Homestead.yaml
@@ -29,9 +30,9 @@ Homestead.yaml
 
 auth.json
 .phpunit.result.cache
+.phpunit.cache
 /.fleet
 /.idea
 /.vscode
 
 /data
-
