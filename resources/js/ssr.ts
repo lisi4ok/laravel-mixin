@@ -7,11 +7,11 @@ import { ZiggyVue } from 'ziggy-js';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
-createServer((page) =>
+createServer((page: Page) =>
     createInertiaApp({
         page,
         render: renderToString,
-        title: (title) => `${title} - ${appName}`,
+        title: (title): string => `${title} - ${appName}`,
         resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob<DefineComponent>('./Pages/**/*.vue')),
         setup({ App, props, plugin }) {
             return createSSRApp({ render: () => h(App, props) })

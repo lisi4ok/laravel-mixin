@@ -9,9 +9,9 @@ import { ZiggyVue } from 'ziggy-js';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
+    title: (title): string => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob<DefineComponent>('./Pages/**/*.vue')),
-    setup({ el, App, props, plugin }) {
+    setup({ el, App, props, plugin }): void {
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
